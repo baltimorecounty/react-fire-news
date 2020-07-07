@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "@baltimorecounty/dotgov-components/lib/styles/dotgov.min.css";
+import "./App.css";
+
+import { FilterList } from "@baltimorecounty/react-filter-list";
+import FireNewsRoomCard from "./components/FireNewsRoomCard";
+import React from "react";
+import { Run, getValue, filters } from "./Startup";
+
+Run();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FilterList
+      title="Baltimore County Fire Newsroom"
+      filters={filters}
+      apiEndpoint={getValue("apiRoot")}
+      renderItem={(props) => <FireNewsRoomCard {...props} />}
+    />
   );
 }
 
