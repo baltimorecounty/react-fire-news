@@ -24,7 +24,10 @@ const NewsRoomCard = (props) => {
     day: "numeric",
   };
 
-  const content = new Date(contentDate).toLocaleDateString("en-US", options);
+  const articleDate = new Date(contentDate).toLocaleDateString(
+    "en-US",
+    options
+  );
 
   return (
     <Card className="text-left">
@@ -40,7 +43,7 @@ const NewsRoomCard = (props) => {
             />
           </div>
           <div className="col-sm-9 col-xs-12">
-            <p>{content}</p>
+            <p>{articleDate}</p>
             <p>{articleSummary}</p>
           </div>
         </div>
