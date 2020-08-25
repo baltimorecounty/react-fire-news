@@ -17,6 +17,7 @@ function App() {
       renderItem={(props) => <FireNewsRoomCard {...props} />}
       includeInputFilter={true}
       includeDateFilter={true}
+      searchCategory="FireNews"
       inputFilterPlaceholder="Begin typing to filter by title or summary..."
     />
   );
